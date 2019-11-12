@@ -3,7 +3,7 @@ import React from 'react';
 import './login.css';
 import logo from '../assets/logo.svg';
 
-export default function login() {
+export default function Login() {
     return(
         <div className="login-container">
 
