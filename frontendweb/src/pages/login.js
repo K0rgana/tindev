@@ -7,7 +7,11 @@ export default function login() {
     return(
         <div className="login-container">
 
-            <img src={logo} alt="Tindev logo"/>
+            <form>
+                <img src={logo} alt="Tindev logo"/>
+                <input placeholder="Type your username from GitHub"/>
+                <button type="submit"> Join</button>
+            </form>
 
         </div>
         
