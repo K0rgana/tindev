@@ -5,7 +5,12 @@ import logo from '../assets/logo.svg';
 
 export default function login() {
     return(
-        <img src={logo} alt="Tindev logo"/>
+        <div className="login-container">
+
+            <img src={logo} alt="Tindev logo"/>
+
+        </div>
+        
 
     );
 }
