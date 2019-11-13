@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
+import api from '../services/api';
+
+import './home.css';
 import logo from '../assets/logo.svg';
 import like from '../assets/like.svg';
 import dislike from '../assets/dislike.svg';
 
 export default function Home({ match }) {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        async function loadUsers() {
+            const response = await api.get('/devs',{
+                headers: {
+                    user: match.params.id,
+                }
+            })
+            setUsers(response.data);
+        }
+        loadUsers();
+    },[match.params.id]);
     return(
         <div className="home-container">
             <img src={logo} alt="Tindev logo"/>
@@ -56,7 +72,7 @@ export default function Home({ match }) {
                     </button>
                 </div>
                 </li>
-                
+
                 <li>
                 <img src="https://avatars3.githubusercontent.com/u/48961500?v=4" alt=""/>
                 <footer>
