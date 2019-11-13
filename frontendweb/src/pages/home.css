@@ -52,6 +52,6 @@
     cursor: pointer;
 }
 .home-container ul li .buttons button:hover img{
-    transform: translate(-5px);
+    transform: translateY(-5px);
     transition: all 0.2s;
 }
