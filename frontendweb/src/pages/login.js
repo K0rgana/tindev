@@ -7,11 +7,14 @@ import api from '../services/api';
 export default function Login({ history }) {
     const [username, setUsername] = useState('');
 
-    function handleSubmit(evt) {
+    async function handleSubmit(evt) {
         evt.preventDefault();
 
-        console.log(username);
-        history.push('/home');
+        const response = await api.post('/devs', {
+            username,  //@username guarda o parametro do json da api na const 
+        });
+        const { _id } = response.data;
+        history.push(`/home/${_id}`);
     }
 
     return(
