@@ -25,19 +25,25 @@ export default function Home({ match }) {
         <div className="home-container">
             <img src={logo} alt="Tindev logo"/>
             <ul>
-                <li>
-                <img src="https://avatars3.githubusercontent.com/u/48961500?v=4" alt=""/>
-                <footer>
-                    <strong>Morgana Fernandes</strong>
-                    <p>a vida é uma life</p>
-                </footer>
-                <div className="buttons">
-                    <button type="button">
-                        <img src={dislike} alt="dislike"/>
-                    </button>
-                    <button type="button">
-                        <img src={like} alt="like"/>
-                    </button>
-                </div>
-                </li>
+                {users.map(user => (
+                    <li>
+                        <img src={user.avatar} alt="{user.name}"/>
+                        <footer>
+                            <strong>{user.name}</strong>
+                            <p>{user.bio}</p>
+                        </footer>
+                        
+                        <div className="buttons">
+                            <button type="button">
+                                <img src={dislike} alt="dislike"/>
+                            </button>
+                            <button type="button">
+                                <img src={like} alt="like"/>
+                            </button>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    
     )} 
